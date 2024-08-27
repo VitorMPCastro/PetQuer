@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetQuer - Book Appointments for Your Pets</title>
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<!-- Header Section -->
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">PetQuer</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="/login" class="btn primary">Sign In</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Book Appointments for Your Pets, Easily.</h1>
+        <p>Managing your pet’s health has never been easier. Schedule, track, and manage appointments all in one place.</p>
+        <a href="#features" class="btn secondary">Learn More</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2>Why Choose PetQuer?</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-paw fa-3x"></i>
+                <h3>Pet-Centric</h3>
+                <p>Designed specifically for managing your pet’s appointments and health records.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-calendar-check fa-3x"></i>
+                <h3>Easy Scheduling</h3>
+                <p>Schedule appointments with just a few clicks, and get reminders before they happen.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-mobile-alt fa-3x"></i>
+                <h3>Responsive Design</h3>
+                <p>Access from any device, whether it’s a desktop, tablet, or mobile phone.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 PetQuer. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script th:src="@{/js/scripts.js}"></script>
+</body>
+</html>
