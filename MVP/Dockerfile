@@ -4,6 +4,9 @@ FROM openjdk:17-jdk-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
+# Set JAVA_HOME environment variable
+ENV JAVA_HOME=/usr/local/openjdk-17
+
 # Copy the jar file to the container
 COPY build/libs/petquer-0.0.1-SNAPSHOT.jar app.jar
 
