@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    <script src="/static/js/toggleUserTypeFields.js"></script>
+</head>
+<body>
+<h1>Add User</h1>
+<form th:action="@{/userPlayground/addUser}" th:object="${user}" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" th:field="*{username}" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" th:field="*{password}" required>
+    <br>
+    <label for="userType">User Type:</label>
+    <select id="userType" th:field="*{userType}" onchange="toggleUserTypeFields()" required>
+        <option value="individual">Individual</option>
+        <option value="company">Company</option>
+        <option value="both">Both</option>
+    </select>
+    <br>
+    <div id="individualFields" style="display:none;">
+        <h2>Individual Details</h2>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" th:field="*{individual.cpf}">
+        <br>
+        <label for="rg">RG:</label>
+        <input type="text" id="rg" th:field="*{individual.rg}">
+        <br>
+        <label for="individualName">Individual Name:</label>
+        <input type="text" id="individualName" th:field="*{individual.individualName}">
+    </div>
+    <div id="companyFields" style="display:none;">
+        <h2>Company Details</h2>
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" th:field="*{company.cnpj}">
+        <br>
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" th:field="*{company.companyName}">
+    </div>
+    <br>
+    <button type="submit">Add User</button>
+</form>
+<a th:href="@{/userPlayground}">Back to User List</a>
+</body>
+</html>

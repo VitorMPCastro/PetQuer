@@ -1,22 +1,69 @@
 package com.petquer.petquer.service;
 
-import com.petquer.petquer.dto.UserRegistrationDTO;
+import com.petquer.petquer.entity.Company;
+import com.petquer.petquer.entity.Individual;
 import com.petquer.petquer.entity.User;
+import com.petquer.petquer.repository.CompanyRepository;
+import com.petquer.petquer.repository.IndividualRepository;
+import com.petquer.petquer.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class UserService {
-    public User registerUser(UserRegistrationDTO userDto) {
-        // Mock saving a user
-        User user = new User();
-        user.setId(1L); // Mocked ID
-        user.setUsername(userDto.getUsername());
-        user.setEmail(userDto.getEmail());
-        user.setCreatedAt(LocalDateTime.now());
 
-        // Simulate successful user creation
-        return user;
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private CompanyRepository companyRepository;
+
+    @Autowired
+    private IndividualRepository individualRepository;
+
+    @Transactional
+    public User createUserWithDetails(User user, Individual individual, Company company) {
+        User savedUser = userRepository.save(user);
+
+        if (individual != null) {
+            individual.setUser(savedUser);
+            individualRepository.save(individual);
+        }
+
+        if (company != null) {
+            company.setUser(savedUser);
+            companyRepository.save(company);
+        }
+
+        return savedUser;
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
+
+    public void saveUser(User user) {
+        userRepository.save(user);
+    }
+
+    public void updateUser(Long id, User user) {
+        User existingUser = userRepository.findById(id).orElse(null);
+        if (existingUser != null) {
+            existingUser.setUsername(user.getUsername());
+            existingUser.setEmail(user.getEmail());
+            // Update other fields as necessary
+            userRepository.save(existingUser);
+        }
+    }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 }
