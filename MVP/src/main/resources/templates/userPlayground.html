@@ -21,8 +21,10 @@
     <tbody>
     <tr th:each="user : ${users}">
         <td th:text="${user.id}"></td>
-        <td th:text="${user.username}">Username</td>
-        <td th:text="${user.email}">Email</td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.createdAt}"></td>
+        <td th:text="${user.userType}"></td>
         <td>
             <a th:href="@{/userPlayground/edit/{id}(id=${user.id})}">Edit</a>
             <a th:href="@{/userPlayground/delete/{id}(id=${user.id})}">Delete</a>

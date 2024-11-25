@@ -26,6 +26,10 @@ public class UserService {
 
     @Transactional
     public User createUserWithDetails(User user, Individual individual, Company company) {
+        if (user == null) {
+            throw new IllegalArgumentException("User cannot be null");
+        }
+
         User savedUser = userRepository.save(user);
 
         if (individual != null) {
