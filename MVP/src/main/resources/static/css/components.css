@@ -1,0 +1,82 @@
+/* components.css */
+/* Keypoints (light and dark) */
+.keypoint {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.keypoint.light {
+    background-color: #fff;
+    color: #333;
+}
+
+.keypoint.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+.keypoint .title {
+    font-size: 24px;
+    color: #00c48a;
+}
+
+.keypoint .subtitle {
+    font-size: 16px;
+    color: #333;
+}
+
+.keypoint.light .subtitle {
+    color: #555;
+}
+
+.keypoint.dark .subtitle {
+    color: #ddd;
+}
+
+/* Sections (light and dark) */
+.section {
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.section.light {
+    background-color: #fff;
+    color: #333;
+}
+
+.section.dark {
+    background-color: #000;
+    color: #fff;
+}
+
+.section .title {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.section .text {
+    font-size: 18px;
+}
+
+/* header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    max-height: 50px;
+}
+
+.header .menu {
+    display: flex;
+    gap: 20px;
+}
