@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Edit User</h1>
-<form th:action="@{/userPlayground/edit/{id}(id=${user.id})}" th:object="${user}" method="post">
+<form th:action="@{/userPlayground/editUser/{id}(id=${user.id})}" th:object="${user}" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" th:field="*{username}" required>
     <label for="email">Email:</label>

@@ -26,8 +26,8 @@
         <td th:text="${user.createdAt}"></td>
         <td th:text="${user.userType}"></td>
         <td>
-            <a th:href="@{/userPlayground/edit/{id}(id=${user.id})}">Edit</a>
-            <a th:href="@{/userPlayground/delete/{id}(id=${user.id})}">Delete</a>
+            <a th:href="@{/userPlayground/editUser/{id}(id=${user.id})}">Edit</a>
+            <a th:href="@{/userPlayground/deleteUser/{id}(id=${user.id})}">Delete</a>
         </td>
     </tr>
     </tbody>

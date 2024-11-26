@@ -35,3 +35,21 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Logs ###
+logs/
+*.log
+
+### Gradle Cache ###
+gradle-cache/
+.gradle/
+
+### Build Output ###
+/build/
+!/src/main/**/build
+
+### Temporary Files ###
+*.lock
+*.tmp
+*.bak
+*.swp
