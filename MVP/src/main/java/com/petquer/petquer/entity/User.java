@@ -1,6 +1,7 @@
 package com.petquer.petquer.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
@@ -9,10 +10,15 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String username;
     private String email;
     private String password;
+
+    @CreationTimestamp
+    @Column(updatable = false)
     private LocalDateTime createdAt;
+
     private String userType;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
@@ -20,6 +26,8 @@ public class User {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Individual individual;
+
+    // Getters e Setters
 
     public Long getId() {
         return id;
