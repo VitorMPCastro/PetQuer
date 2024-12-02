@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anuncio Playground</title>
+</head>
+<body>
+<h1>Anuncio Playground</h1>
+<a href="/anuncioPlayground/addAnuncio">Add Anuncio</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>User ID</th>
+        <th>Address</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="anuncio : ${anuncios}">
+        <td th:text="${anuncio.id}"></td>
+        <td th:text="${anuncio.titulo}"></td>
+        <td th:text="${anuncio.descricao}"></td>
+        <td th:text="${anuncio.idUsuario}"></td>
+        <td th:text="${anuncio.endereco}"></td>
+        <td>
+            <a th:href="@{/anuncioPlayground/editAnuncio/{id}(id=${anuncio.id})}">Edit</a>
+            <a th:href="@{/anuncioPlayground/deleteAnuncio/{id}(id=${anuncio.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
