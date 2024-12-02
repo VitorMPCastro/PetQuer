@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Playground</title>
+</head>
+<body>
+<h1>Pet Playground</h1>
+<a href="/petPlayground/addPet">Add Pet</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Breed</th>
+        <th>Size</th>
+        <th>Observation</th>
+        <th>Birth Date</th>
+        <th>User ID</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pet : ${pets}">
+        <td th:text="${pet.idPet}"></td>
+        <td th:text="${pet.nome}"></td>
+        <td th:text="${pet.raca}"></td>
+        <td th:text="${pet.porte}"></td>
+        <td th:text="${pet.observacao}"></td>
+        <td th:text="${pet.dataDeNascimento}"></td>
+        <td th:text="${pet.idUsuario}"></td>
+        <td>
+            <a th:href="@{/petPlayground/editPet/{id}(id=${pet.idPet})}">Edit</a>
+            <a th:href="@{/petPlayground/deletePet/{id}(id=${pet.idPet})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

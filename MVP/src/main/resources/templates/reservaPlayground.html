@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva Playground</title>
+</head>
+<body>
+<h1>Reserva Playground</h1>
+<a href="/reservaPlayground/addReserva">Add Reserva</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Anuncio ID</th>
+        <th>Inicio</th>
+        <th>Fim</th>
+        <th>Pet ID</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="reserva : ${reservas}">
+        <td th:text="${reserva.idReserva}"></td>
+        <td th:text="${reserva.idAnuncio}"></td>
+        <td th:text="${reserva.inicio}"></td>
+        <td th:text="${reserva.fim}"></td>
+        <td th:text="${reserva.petIdPet}"></td>
+        <td>
+            <a th:href="@{/reservaPlayground/editReserva/{id}(id=${reserva.idReserva})}">Edit</a>
+            <a th:href="@{/reservaPlayground/deleteReserva/{id}(id=${reserva.idReserva})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tipo Denuncia Playground</title>
+</head>
+<body>
+<h1>Tipo Denuncia Playground</h1>
+<a href="/tipoDenunciaPlayground/addTipoDenuncia">Add Tipo Denuncia</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tipo</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tipoDenuncia : ${tipoDenuncias}">
+        <td th:text="${tipoDenuncia.idTipoDenuncia}"></td>
+        <td th:text="${tipoDenuncia.tipo}"></td>
+        <td>
+            <a th:href="@{/tipoDenunciaPlayground/editTipoDenuncia/{id}(id=${tipoDenuncia.idTipoDenuncia})}">Edit</a>
+            <a th:href="@{/tipoDenunciaPlayground/deleteTipoDenuncia/{id}(id=${tipoDenuncia.idTipoDenuncia})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

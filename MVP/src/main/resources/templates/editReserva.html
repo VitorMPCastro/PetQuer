@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Reserva</title>
+</head>
+<body>
+<h1>Edit Reserva</h1>
+<form th:action="@{/reservaPlayground/editReserva/{id}(id=${reserva.idReserva})}" th:object="${reserva}" method="post">
+    <label for="idAnuncio">Anuncio ID:</label>
+    <input type="number" id="idAnuncio" th:field="*{idAnuncio}" required>
+    <label for="inicio">Inicio:</label>
+    <input type="datetime-local" id="inicio" th:field="*{inicio}" required>
+    <label for="fim">Fim:</label>
+    <input type="datetime-local" id="fim" th:field="*{fim}" required>
+    <label for="petIdPet">Pet ID:</label>
+    <input type="number" id="petIdPet" th:field="*{petIdPet}" required>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
