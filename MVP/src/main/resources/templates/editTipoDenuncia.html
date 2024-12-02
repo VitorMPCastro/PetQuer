@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Tipo Denuncia</title>
+</head>
+<body>
+<h1>Edit Tipo Denuncia</h1>
+<form th:action="@{/tipoDenunciaPlayground/editTipoDenuncia/{id}(id=${tipoDenuncia.idTipoDenuncia})}" th:object="${tipoDenuncia}" method="post">
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" th:field="*{tipo}" required>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
