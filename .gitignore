@@ -37,7 +37,7 @@ out/
 .vscode/
 
 ### Logs ###
-logs/
+MVP/logs/
 *.log
 
 ### Gradle Cache ###
@@ -53,3 +53,4 @@ gradle-cache/
 *.tmp
 *.bak
 *.swp
+*.log
