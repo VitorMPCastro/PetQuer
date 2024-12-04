@@ -17,7 +17,7 @@ public class LogReservaCriada {
     private LocalDateTime timestamp;
 
     @ManyToOne
-    @JoinColumn(name = "id_reserva", referencedColumnName = "id_reserva", foreignKey = @ForeignKey(name = "id_reserva_fk"))
+    @JoinColumn(name = "id_reserva", referencedColumnName = "id_reserva", foreignKey = @ForeignKey(name = "log_reserva_criada_id_reserva_fk"))
     private Reserva reserva;
 
     // Getters and Setters

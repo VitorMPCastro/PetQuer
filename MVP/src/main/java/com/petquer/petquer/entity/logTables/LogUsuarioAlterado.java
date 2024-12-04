@@ -17,7 +17,7 @@ public class LogUsuarioAlterado {
     private LocalDateTime timestamp;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", foreignKey = @ForeignKey(name = "id_usuario_fk"))
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id", foreignKey = @ForeignKey(name = "log_usuario_alterado_id_usuario_fk"))
     private User usuario;
 
     // Getters and Setters

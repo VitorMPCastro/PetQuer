@@ -17,7 +17,7 @@ public class LogPetExcluido {
     private LocalDateTime timestamp;
 
     @ManyToOne
-    @JoinColumn(name = "id_pet", referencedColumnName = "id_pet", foreignKey = @ForeignKey(name = "id_pet_fk"))
+    @JoinColumn(name = "id_pet", referencedColumnName = "id_pet", foreignKey = @ForeignKey(name = "log_pet_excluido_id_pet_fk"))
     private Pet pet;
 
     // Getters and Setters
