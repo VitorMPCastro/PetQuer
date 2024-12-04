@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pagamento</title>
+</head>
+<body>
+<h1>Add Pagamento</h1>
+<form th:action="@{/pagamento/add}" th:object="${pagamento}" method="post">
+    <label for="valor">Valor:</label>
+    <input type="number" id="valor" th:field="*{valor}" step="0.01" required>
+    <label for="datahora">Data e Hora:</label>
+    <input type="datetime-local" id="datahora" th:field="*{datahora}" required>
+    <label for="metodoPagamento">Metodo Pagamento:</label>
+    <input type="number" id="metodoPagamento" th:field="*{metodoPagamento.idMetodoPagamento}" required>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

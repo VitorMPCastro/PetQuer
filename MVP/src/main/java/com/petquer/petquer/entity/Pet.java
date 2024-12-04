@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pet")
     private Long idPet;
     private String nome;
     private String raca;
