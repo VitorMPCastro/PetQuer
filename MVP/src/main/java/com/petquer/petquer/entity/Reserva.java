@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_reserva")
     private Long idReserva;
     private Long idAnuncio;
     private LocalDateTime inicio;
