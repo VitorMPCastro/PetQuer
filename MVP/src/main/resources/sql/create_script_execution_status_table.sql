@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS script_execution_status (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    script_name VARCHAR(255) NOT NULL,
+    executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -14,11 +14,11 @@ public class DenunciaUsuario {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo_denuncia", referencedColumnName = "id_tipo_denuncia", foreignKey = @ForeignKey(name = "id_tipo_denuncia_fk"))
+    @JoinColumn(name = "id_tipo_denuncia", referencedColumnName = "id_tipo_denuncia", foreignKey = @ForeignKey(name = "usuario_id_tipo_denuncia_fk"))
     private TipoDenuncia tipoDenuncia;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id", foreignKey = @ForeignKey(name = "id_usuario_fk"))
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id", foreignKey = @ForeignKey(name = "usuario_id_usuario_fk"))
     private User usuario;
 
     @ManyToOne

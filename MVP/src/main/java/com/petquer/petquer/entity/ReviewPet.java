@@ -20,7 +20,7 @@ public class ReviewPet {
     private Integer avaliacao;
 
     @ManyToOne
-    @JoinColumn(name = "id_reserva", referencedColumnName = "id_reserva", foreignKey = @ForeignKey(name = "id_reserva_fk"))
+    @JoinColumn(name = "id_reserva", referencedColumnName = "id_reserva", foreignKey = @ForeignKey(name = "review_pet_id_reserva_fk"))
     private Reserva reserva;
 
     // Getters and Setters

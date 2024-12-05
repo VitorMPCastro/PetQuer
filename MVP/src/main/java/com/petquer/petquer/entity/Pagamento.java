@@ -18,7 +18,7 @@ public class Pagamento {
     private LocalDateTime datahora;
 
     @ManyToOne
-    @JoinColumn(name = "id_metodo_pagamento", referencedColumnName = "id_metodo_pagamento", foreignKey = @ForeignKey(name = "id_metodo_pagamento_fk"))
+    @JoinColumn(name = "id_metodo_pagamento", referencedColumnName = "id_metodo_pagamento", foreignKey = @ForeignKey(name = "pagamento_id_metodo_pagamento_fk"))
     private MetodoPagamento metodoPagamento;
 
     // Getters and Setters

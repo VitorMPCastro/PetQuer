@@ -22,7 +22,7 @@ public class Horario {
     private LocalTime horarioTermino;
 
     @ManyToOne
-    @JoinColumn(name = "id_anuncio", referencedColumnName = "id_anuncio", foreignKey = @ForeignKey(name = "id_anuncio_fk"))
+    @JoinColumn(name = "id_anuncio", referencedColumnName = "id_anuncio", foreignKey = @ForeignKey(name = "horario_id_anuncio_fk"))
     private Anuncio anuncio;
 
     // Getters and Setters
